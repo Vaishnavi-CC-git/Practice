@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday!</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    background: #ffd6e8;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ---------- PAGE 1 ---------- */
+  #page1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  #page1 h1 {
+    color: #d6336c;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    animation: pop 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes pop {
+    from { transform: scale(1); }
+    to   { transform: scale(1.06); }
+  }
+  .pink-btn {
+    background: #ff6fa5;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(255, 111, 165, 0.5);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .pink-btn:hover {
+    background: #ff4f95;
+    transform: translateY(-3px);
+  }
+
+  /* ---------- PAGE 2 ---------- */
+  #page2 {
+    display: none;
+    padding: 60px 20px 100px;
+    text-align: center;
+  }
+  #page2 h2 {
+    color: #d6336c;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+  }
+
+  .calendar {
+    max-width: 420px;
+    margin: 0 auto 60px;
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .cal-header {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #d6336c;
+    margin-bottom: 15px;
+  }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+  .cal-grid div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: 0.9em;
+    color: #555;
+  }
+  .cal-grid .day-name {
+    font-weight: bold;
+    color: #d6336c;
+  }
+  .empty { visibility: hidden; }
+
+  .heart {
+    position: relative;
+    width: 34px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.85em;
+    transform: scale(0.9);
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 32px;
+    background: #ff2d6a;
+    border-radius: 50px 50px 0 0;
+  }
+  .heart::before { left: 17px; transform: rotate(-45deg); transform-origin: 0 100%; }
+  .heart::after  { left: -3px; transform: rotate(45deg); transform-origin: 100% 100%; }
+  .heart span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 6px;
+  }
+
+  /* ---------- WISHES SECTION ---------- */
+  .wishes {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 18px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .wishes h2 {
+    color: #d6336c;
+    margin-bottom: 18px;
+  }
+  .wishes p {
+    color: #444;
+    line-height: 1.7;
+    font-size: 1.05em;
+    text-align: left;
+  }
+  .emojis {
+    font-size: 1.6em;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div id="page1">
+    <h1> Welcome Birthday Girl</h1>
+    <h2>Vaishnavi's birth day!....</h2>
+    <button class="pink-btn" onclick="goToPage2()">Click Me</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div id="page2">
+    <h2>Your Special Day </h2>
+
+    <div class="calendar">
+      <div class="cal-header">August 2026</div>
+      <div class="cal-grid">
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+
+        <div class="empty">.</div><div class="empty">.</div><div class="empty">.</div>
+        <div class="empty">.</div><div class="empty">.</div><div class="empty">.</div>
+        <div>1</div>
+
+        <div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div>
+        <div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+        <div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div>
+        <div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div>
+
+        <div>30</div>
+        <div class="heart"><span>31</span></div>
+        <div class="empty">.</div><div class="empty">.</div><div class="empty">.</div>
+        <div class="empty">.</div><div class="empty">.</div>
+      </div>
+    </div>
+
+    <div class="wishes">
+      <h2>Happy Birthday Vaishnavi!</h2>
+      <p>
+        Wishing you the happiest of birthdays Vaishanavi on your special day! May this new year of your
+        life be filled with endless laughter, beautiful surprises, and moments that take your
+        breath away. You deserve all the love, joy, and sweetness that life has to offer, and
+        so much more. May every dream you've been quietly holding onto finally find its way to
+        you, and may you always be surrounded by people who cherish you as much as you deserve.
+        Here's to another year of being wonderfully, uniquely you. Enjoy your day to the fullest,
+        birthday girl — you deserve the world and everything beyond it!
+      </p>
+    </div>
+  </div>
+
+<script>
+  function goToPage2() {
+    document.getElementById('page1').style.display = 'none';
+    document.getElementById('page2').style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
